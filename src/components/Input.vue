@@ -1,7 +1,7 @@
 <template>
   <form>
+    <input type="text" name="textinput" />
     <button type="submit">Add</button>
-    Hello
   </form>
 </template>
 
@@ -10,9 +10,9 @@ export default {
   props: {
     // add optional props here
   },
-  setup(props, context) {
-    return {};
+  setup() {
     // setup component
+    return {};
   },
 };
 </script>
