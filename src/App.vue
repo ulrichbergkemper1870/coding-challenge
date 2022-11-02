@@ -1,7 +1,7 @@
 <template>
   <h1>Coding Challenge</h1>
-  <Output />
   <Input />
+  <Output />
 </template>
 
 <script type="ts">

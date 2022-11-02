@@ -1,14 +1,31 @@
 <template>
-  <ul>
-    <li v-for="(line, index) in lines" :key="index">{{ line }}</li>
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Text value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Example</td>
+        <td><button>remove</button></td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script type="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
+export default {
   props: {
-    lines: [],
+    // add optional props here
   },
-});
+  setup() {
+    // setup component
+    return {};
+  },
+};
+
 </script>
