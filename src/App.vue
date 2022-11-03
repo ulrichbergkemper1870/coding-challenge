@@ -25,16 +25,14 @@ export default {
       list.value.push(newItem);
     };
 
-    const removeFromList = (id) => {
+    const removeFromList = (idToRemove) => {
       const indexOfitemToRemove = list.value.findIndex(
-        (item) => item.id === id
+        (item) => item.id === idToRemove
       );
       list.value.splice(indexOfitemToRemove, 1);
     };
 
-    const isAddDisabled = computed(() => {
-      return list.value.length === 10;
-    });
+    const isAddDisabled = computed(() => list.value.length === 10);
 
     return {
       list,
