@@ -8,24 +8,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Example</td>
-        <td><button>remove</button></td>
+      <tr v-for="(item, idx) in list" :key="`item-${item.id}`">
+        <td>{{ idx + 1 }}</td>
+        <td>{{ item.value }}</td>
+        <td>
+          <button @click="$emit('remove-from-list', item.id)">remove</button>
+        </td>
       </tr>
     </tbody>
   </table>
 </template>
 
-<script type="ts">
+<script lang="ts">
 export default {
   props: {
-    // add optional props here
-  },
-  setup() {
-    // setup component
-    return {};
+    list: Array,
   },
 };
-
 </script>
