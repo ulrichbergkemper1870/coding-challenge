@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+import { toRefs } from "vue";
+
 const ADD_TEXT = "Add";
 const emit = defineEmits(["handleAdd"]);
 
-defineProps({
-  input: String
-});
+const { input } = toRefs(
+  defineProps({
+    input: String
+  })
+);
 
 const handleAdd = input => {
   emit("handleAdd", input);
