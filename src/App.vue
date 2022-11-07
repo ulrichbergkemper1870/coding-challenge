@@ -33,6 +33,6 @@ const handleDelete = index => {
 
 <template>
   <h1>Coding Challenge</h1>
-  <Input :input="input" @handleAdd="handleAdd" :list="list"/>
+  <Input :input="input" @handleAdd="handleAdd" />
   <Output :list="list" @handleDelete="handleDelete" />
 </template>

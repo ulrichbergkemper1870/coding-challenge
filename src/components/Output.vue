@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { toRefs } from "vue";
-
 const emit = defineEmits(["handleDelete"]);
 const REMOVE_TEXT = "remove";
 const HEADER = {
@@ -9,11 +7,9 @@ const HEADER = {
   actions: "Actions"
 };
 
-const props = defineProps({
-  list: []
+defineProps({
+  list: Array
 });
-
-const { list } = toRefs(props);
 
 const handleDelete = index => {
   emit("handleDelete", index);
