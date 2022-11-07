@@ -15,7 +15,8 @@ const handleAdd = input => {
 };
 
 const handleDelete = index => {
-  delete list.value[index];
+  const updateList = list.value.filter((item, itemIndex) => itemIndex !== index);
+  list.value = updateList;
 };
 </script>
 

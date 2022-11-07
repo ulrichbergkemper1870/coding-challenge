@@ -43,8 +43,8 @@ const handleDelete = index => {
     </thead>
     <tbody>
       <tr v-for="(item, index) in list" class="table-list" :key="`${item}-${index}`">
-        <td>{{ item && index }}</td>
-        <td>{{ item && item }}</td>
+        <td v-if="item">{{ index }}</td>
+        <td v-if="item">{{ item }}</td>
         <td v-if="item">
           <button @click="handleDelete(index)" class="table--btn__remove">
             {{ REMOVE_TEXT }}
