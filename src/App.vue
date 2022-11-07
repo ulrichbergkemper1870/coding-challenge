@@ -8,10 +8,7 @@ const list = ref(["hello", "world"]);
 
 const handleAdd = e => {
   e.preventDefault();
-  list.value.push({
-    done: false,
-    content: input.value
-  });
+  list.value.push(input.value);
 
   console.log("add", input.value, e);
 };
