@@ -42,7 +42,7 @@ const handleDelete = index => {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, index) in list" class="table-list">
+      <tr v-for="(item, index) in list" class="table-list" :key="`${item}-${index}`">
         <td>{{ item && index }}</td>
         <td>{{ item && item }}</td>
         <td v-if="item">
