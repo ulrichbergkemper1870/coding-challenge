@@ -3,7 +3,8 @@ const ADD_TEXT = "Add";
 const emit = defineEmits(["handleAdd"]);
 
 defineProps({
-  input: String
+  input: String,
+  disableAddButton: Boolean
 });
 
 const handleAdd = input => {
@@ -14,6 +15,6 @@ const handleAdd = input => {
 <template>
   <form @submit.prevent="handleAdd(input)">
     <input v-model="input" :input="input" type="text" name="input" />
-    <button>{{ ADD_TEXT }}</button>
+    <button :disabled="disableAddButton">{{ ADD_TEXT }}</button>
   </form>
 </template>

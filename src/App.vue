@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import Input from "@/components/Input.vue";
 import Output from "@/components/Output.vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 const input = ref("");
 const list = ref(["hello", "world"]);
+
+const disableAddButton = computed(() => {
+  return list.value.length > 10;
+})
 
 const handleAdd = input => {
   list.value.push(input);
@@ -33,6 +37,6 @@ const handleDelete = index => {
 
 <template>
   <h1>Coding Challenge</h1>
-  <Input :input="input" @handleAdd="handleAdd" />
+  <Input :input="input" @handleAdd="handleAdd" :disableAddButton="disableAddButton" />
   <Output :list="list" @handleDelete="handleDelete" />
 </template>
