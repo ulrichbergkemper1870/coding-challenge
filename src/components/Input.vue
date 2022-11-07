@@ -6,14 +6,14 @@ defineProps({
   input: String
 });
 
-const handleAdd = () => {
-  emit("handleAdd");
+const handleAdd = input => {
+  emit("handleAdd", input);
 };
 </script>
 
 <template>
-  <form @submit.prevent="handleAdd">
-    <input v-model="input" type="text" name="input" />
+  <form @submit.prevent="handleAdd(input)">
+    <input v-model="input" :input="input" type="text" name="input" />
     <button>{{ ADD_TEXT }}</button>
   </form>
 </template>

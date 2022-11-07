@@ -6,11 +6,8 @@ import { ref } from "vue";
 const input = ref("");
 const list = ref(["hello", "world"]);
 
-const handleAdd = e => {
-  e.preventDefault();
-  list.value.push(input.value);
-
-  console.log("add", input.value, e);
+const handleAdd = input => {
+  list.value.push(input);
 };
 
 const handleDelete = index => {
