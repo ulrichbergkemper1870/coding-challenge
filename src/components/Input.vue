@@ -1,18 +1,20 @@
-<template>
-  <form>
-    <input type="text" name="textinput" />
-    <button type="submit">Add</button>
-  </form>
-</template>
+<script lang="ts" setup>
+const ADD_TEXT = "Add";
+const emit = defineEmits(["handleAdd"]);
 
-<script type="ts">
-export default {
-  props: {
-    // add optional props here
-  },
-  setup() {
-    // setup component
-    return {};
-  },
+defineProps({
+  input: String,
+  disableAddButton: Boolean
+});
+
+const handleAdd = input => {
+  emit("handleAdd", input);
 };
 </script>
+
+<template>
+  <form @submit.prevent="handleAdd(input)">
+    <input v-model="input" :input="input" type="text" name="input" />
+    <button :disabled="disableAddButton">{{ ADD_TEXT }}</button>
+  </form>
+</template>
