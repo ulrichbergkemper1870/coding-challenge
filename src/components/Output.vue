@@ -8,43 +8,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="todo in todos" :key="todo.id">
-         <td> {{ todo.id }}</td>
-        <td> {{ todo.text }}</td>
-        <td><button @click="removeTodo(todo)">remove</button></td>
-     
     
-    </tr>
-     
+      <tr v-for="(todo, x) in todos" :key="x">
+        <td>{{todo.id}}</td>
+        <td>{{todo.text}}</td>
+        <td><button @click="deleteToDo(todo.id)">remove</button></td>
+      </tr>
     </tbody>
   </table>
 </template>
 
 <script type="ts">
-let id = 0
-
 export default {
-   data() {
-    return {
-      newTodo: '',
-      todos: [
-        { id: id++, text: 'Learn HTML' },
-        { id: id++, text: 'Learn JavaScript' },
-        { id: id++, text: 'Learn Vue' }
-      ]
-    }
-  },
   methods: {
-     addTodo() {
-      this.todos.push({ id: id++, text: this.newTodo })
-      this.newTodo = ''
-    },
-    removeTodo(todo) {
-      this.todos = this.todos.filter((t) => t !== todo)
-    }
-  }
-}
+    deleteToDo(id) {
+      this.$emit('todo-deleted', id);
+    }},
   props: {
+    todos:{
+      type: String
+
+    }
+    
     // add optional props here
   },
   setup() {
@@ -52,4 +37,5 @@ export default {
     return {};
   },
 };
+
 </script>
