@@ -18,7 +18,6 @@ export default {
   
       todos: [
         { id: id++, text: 'Example' },
-      
       ]
     }
   },

@@ -24,10 +24,7 @@ export default {
       this.$emit('todo-deleted', id);
     }},
   props: {
-    todos:{
-      type: Array
-
-    }
+    todos:Array
 
     // add optional props here
   },

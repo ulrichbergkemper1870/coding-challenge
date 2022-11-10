@@ -1,7 +1,7 @@
 <template>
   <form  @submit.prevent="onSubmit">
     <input type="text"  name="todoText" id="new-todo-input" v-model.lazy.trim="text" />
-    <button type="submit" :disabled="addButton?true:false">Add</button>
+    <button type="submit" :disabled="isAddTodoButtonDisable">Add</button>
   </form>
 </template>
 
@@ -17,9 +17,7 @@ export default {
     }
   },
   props:{
-    totalItems:{
-      type: Number
-    }
+    totalItems:Number
   },
   data() {
     return {
@@ -32,8 +30,8 @@ export default {
     return {};
   },
   computed: {
-    addButton() {
-     return this.totalItems>10?true:false;
+    isAddTodoButtonDisable() {
+     return this.totalItems>9;
     }
   }
 };
