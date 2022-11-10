@@ -8,10 +8,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Example</td>
-        <td><button>remove</button></td>
+      <tr v-for="(todo, x) in todos" :key="x">
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.text }}</td>
+        <td><button @click="deleteToDo(todo.id)">remove</button></td>
       </tr>
     </tbody>
   </table>
@@ -19,7 +19,13 @@
 
 <script type="ts">
 export default {
+  methods: {
+    deleteToDo(id) {
+      this.$emit('todo-deleted', id);
+    }},
   props: {
+    todos:Array
+
     // add optional props here
   },
   setup() {
@@ -27,5 +33,4 @@ export default {
     return {};
   },
 };
-
 </script>
