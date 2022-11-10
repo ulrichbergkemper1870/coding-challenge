@@ -8,10 +8,9 @@
       </tr>
     </thead>
     <tbody>
-    
       <tr v-for="(todo, x) in todos" :key="x">
-        <td>{{todo.id}}</td>
-        <td>{{todo.text}}</td>
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.text }}</td>
         <td><button @click="deleteToDo(todo.id)">remove</button></td>
       </tr>
     </tbody>
@@ -29,7 +28,7 @@ export default {
       type: String
 
     }
-    
+
     // add optional props here
   },
   setup() {
@@ -37,5 +36,4 @@ export default {
     return {};
   },
 };
-
 </script>
