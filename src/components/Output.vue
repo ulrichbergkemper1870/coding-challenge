@@ -25,7 +25,7 @@ export default {
     }},
   props: {
     todos:{
-      type: String
+      type: Array
 
     }
 

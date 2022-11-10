@@ -1,6 +1,6 @@
 <template>
   <form  @submit.prevent="onSubmit">
-    <input type="text" name="todotext" id="new-todo-input" v-model.lazy.trim="text" />
+    <input type="text"  name="todoText" id="new-todo-input" v-model.lazy.trim="text" />
     <button type="submit" :disabled="addButton?true:false">Add</button>
   </form>
 </template>
